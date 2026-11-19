@@ -1,0 +1,13 @@
+X = [0 0 1 1; 0 1 0 1];
+T = [0 1 1 1];
+
+X_test = [0 0 1 1; 0 1 0 1];
+
+net_p1 = perceptron;
+[net_p1, tr] = train(net_p1, X, T);
+
+broj_epoha = tr.num_epochs
+vrijeme = tr.time(end)
+performanse = tr.perf(end)
+
+Y_test = net_p1(X_test)
